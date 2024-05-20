@@ -61,6 +61,14 @@ void fillPrimes() {
     }
 }
 
+// *****************************************************************
+// * Function Name: selectPrime()                                  *
+// * Description: Selects a prime number at random and returns it  *
+// * Parameter Description: N/A                                    *
+// * Date: 05/20/2024                                              *
+// * Author: Cristhian Prado                                       *
+// * References: GeeksForGeeks RSA-Algorithm-Cryptography          *
+// *****************************************************************
 int selectPrime() {
     int randIndex = rand() % primeStorage.size();
     int prime = primeStorage[randIndex];
@@ -68,14 +76,38 @@ int selectPrime() {
     return prime;
 }
 
+// *****************************************************************
+// * Function Name: setKeys()                                      *
+// * Description: Sets the Primary and Private Keys                *
+// * Parameter Description: N/A                                    *
+// * Date: 05/20/2024                                              *
+// * Author: Cristhian Prado                                       *
+// * References: GeeksForGeeks RSA-Algorithm-Cryptography          *
+// *****************************************************************
 void setKeys() {
 
 }
 
+// *****************************************************************
+// * Function Name: encryptMSG(double message)                     *
+// * Description: Encrypts message passed in and returns as a long *
+// * Parameter Description: Message passed in as a double          *
+// * Date: 05/20/2024                                              *
+// * Author: Cristhian Prado                                       *
+// * References: GeeksForGeeks RSA-Algorithm-Cryptography          *
+// *****************************************************************
 long encryptMSG(double message) {
 
 }
 
+// *****************************************************************
+// * Function Name: encode(std::string message)                    *
+// * Description: Encodes the message passed in  char by char      *
+// * Parameter Description: std::string message as message         *
+// * Date: 05/20/2024                                              *
+// * Author: Cristhian Prado                                       *
+// * References: GeeksForGeeks RSA-Algorithm-Cryptography          *
+// *****************************************************************
 std::vector<int> encode(std::string message) {
     std::vector<int> encodedMSG;
 
