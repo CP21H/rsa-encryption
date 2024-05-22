@@ -4,6 +4,7 @@
 #include <vector>
 #include <set>
 #include <bits/stdc++.h>
+#include <random>
 
 /*
  *   //- GLOBAL VARIABLES
@@ -78,7 +79,8 @@ void fillPrimes() {
 // * References: GeeksForGeeks RSA-Algorithm-Cryptography          *
 // *****************************************************************
 int selectPrime() {
-    int randIndex = rand() % primeStorage.size();
+    std::mt19937 mt(time(nullptr));
+    int randIndex = mt() % primeStorage.size();
     int prime = primeStorage[randIndex];
     primeStorage.erase(primeStorage.begin() + randIndex);
     return prime;
