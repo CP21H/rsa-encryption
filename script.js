@@ -1,13 +1,16 @@
 /*
     Global Variables
 */
-PRIME_STORAGE = [];
-let PUBLIC_KEY;
-let PRIVATE_KEY;
-let N;
+var PRIME_STORAGE = [];
+var PUBLIC_KEY;
+var PRIVATE_KEY;
+var N;
 
 
 function main() {
+    fillPrimes();
+    setKeys();
+
     let input = document.getElementById("initMSG");
     let encMSG = document.getElementById("encryptedMSG");
     let decMSG = document.getElementById("decryptedMSG");
@@ -16,9 +19,11 @@ function main() {
     let encryptedMSG = encode(input.value);
 
     // encoded message: -> for loop printing out 
-    //encMSG.innerHTML = 
+    encMSG.innerHTML = encryptedMSG.join("");
 
     // decoded message 
+    let decryptedMSG = decode(encryptedMSG);
+    decMSG.innerHTML = decryptedMSG;
 }
 
 /*
@@ -76,19 +81,43 @@ function setKeys() {
 }
 
 function encryptMSG(message) {
-
+    let e = PUBLIC_KEY;
+    let encryptedMSG = 1;
+    while (e--) {
+        encryptedMSG *= message;
+        encryptedMSG %= N;
+    }
+    return encryptedMSG;
 }
 
 function decryptMSG(encryptedMSG) {
-
+    let d = PRIVATE_KEY;
+    let decryptedMSG = 1;
+    while (d--) {
+        decryptedMSG *= encryptedMSG;
+        decryptedMSG %= N;
+    }
+    return decryptedMSG;
 }
 
 function encode(message) {
+    encodedMSG = [];
 
+    for (let i = 0; i < message.length; i++) {
+        let asciiVal = message.charCodeAt(i);
+        encodedMSG.push(encryptMSG(asciiVal));
+    }
+
+    return encodedMSG;
 }
 
 function decode(encodedMSG) {
-
+    let s = "";
+    for (let i = 0; i < encodedMSG.length; i++) {
+        let decryptedASCII = decryptMSG(encodedMSG[i]);
+        s += String.fromCharCode(decryptedASCII);
+    }
+    return s;
 }
 
 
