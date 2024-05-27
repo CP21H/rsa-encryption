@@ -30,8 +30,14 @@ button {
     border-radius: 5px;
 }
 
+label { 
+    color: black;
+    font-weight: 900;
+}
+
 .container {
-    width: 75vw;
-    height: 100vh;
+    margin: 5vw;
+    width: 90vw;
+    
     overflow-wrap: break-word;
 }
