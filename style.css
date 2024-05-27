@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Space Mono', monospace;
+}
+
+body {
+    color: rgb(71, 71, 71);
+    background-color: #0e2041;
+    background-image: url(images/wallpaper.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: grid;
+    place-items: center;
+    width: 100vw;
+    height: 100%;
+}
+
+input {
+    border-style: solid;
+    border-color: white;
+    border-radius: 10px;
+}
+
+button {
+    border-style: solid;
+    border-color: white;
+    border-radius: 5px;
+}
+
+.container {
+    width: 75vw;
+    height: 100vh;
+    overflow-wrap: break-word;
+}
