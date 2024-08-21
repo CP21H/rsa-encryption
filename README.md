@@ -9,6 +9,7 @@ The program is originally written in `C++` and has then been converted into `Jav
 
 ### Notes
 - Program leverages the `<numeric>` library in C++ for the `lcm` function
+- The `mt19937` random number generator is used in place of the standard libraries rand() or srand() number generators due to its more efficient and higher quality random generation.
 - Storage of prime numbers in the GeeksForGeeks implementation is done by using a `set`. I have opted in my implementation to use a `vector` since we are storing primes in a linear, ordered fashion, and the most we do with said data structure is make accessing calls to it. Due to this, instead of a `set` I opted for taking the **O(1)** accessing time of a `vector` to make prime selection a faster process.
 - GeeksForGeeks implementation uses Euler's Totient Function, whereas I have opted to use the Carmichael's Totient Function. Using Carmichael's Totient Function provides smaller exponent values to speed up the encryption process, which for this example purpose, is preferred. Realistically, Euler's Totient Function should be used as it is less vulnerable with higher exponents at the cost of higher encryption time.
 
